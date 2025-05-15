@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/reset.css">
-  <link rel="stylesheet" href="../css/styles.css">
-  <title>Roll</title>
-</head>
-<body>
-  <div id="app">
-    <div id="player"></div>
-    <div id="dealer"></div>
+  <head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Roll</title>
+  </head>
+  <body>
+    <div class="dice"id="app">
+      <div   id="player"></div>
+      <div id="dealer"></div>
+    </div>
+    <div  class="joueur" id="player">
+      <p id="scorePlayer"></p>
+    </div>
+    <div class="aversaire" id="dealer">
+      <p id="scoreDealer"></p>
   </div>
-  <script src="../js/app.js"></script>
-</body>
+      <p id="resultat" style="font-weight: bold; font-size: 1.2em;"></p>
+
+    <button id="rollBtn">Jouer</button>
+    <script src="/js/app.js"></script>
+  </body>
 </html>
