@@ -7,6 +7,11 @@
   <title>Roll</title>
 </head>
 <body>
+  <div class="choixDes">
+    <label for="nbDes">Nombre de dés à lancer (1 à 6) :</label>
+    <input type="number" id="nbDes" name="nbDes" min="1" max="6" value="1" />
+    <button onclick="creationDes(nombreDes,addDe)">Jouer</button>
+  </div>
   <div id="app">
     <div id="player">
     </div>

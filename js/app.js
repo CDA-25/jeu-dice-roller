@@ -1,22 +1,12 @@
+// JE N'AI PAS ENCORE FINI, MAIS JE DOIS ALLER DORMIR
 
-let combien = parseInt(prompt("Combien de dés voulez vous lancer ? Maximum 6"))
-
-function addDe() {
-    const container = document.getElementById("player");
-    const container2 = document.getElementById("dealer");
-    const newDiv1 = document.createElement("div");
-    const newDiv2 = document.createElement("div");
-    newDiv1.classList.add("dice");
-    newDiv2.classList.add("dice");
-    container.appendChild(newDiv1);
-    container2.appendChild(newDiv2);
+function validerNombreDes() {
+    const input = document.getElementById("nbDes");
+    const valeur = parseInt(input.value);
+    return valeur;
 }
 
-
-function creationDes(combien,addDe) {
-    for (let i = 0; i < combien; i++) {
-        addDe() } 
-}
+const nombreDes = validerNombreDes()
 
 function getRandom(min, max) {
     min = Math.ceil(min);
@@ -24,16 +14,44 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function desAleatoires(getRandom) {
-    let nombre = 0;
-    resultat = getRandom();
-    nombre === (resultat * 100);
+function addDe() {
+    const container = document.getElementById("player");
+    const container2 = document.getElementById("dealer");
+    
+    const valeur1 = getRandom(1, 6);
+    const valeur2 = getRandom(1, 6);
+    
+    const newDiv1 = document.createElement("div");
+    const newDiv2 = document.createElement("div");
+    
+    newDiv1.classList.add("dice");
+    newDiv2.classList.add("dice");
 
+    newDiv1.style.backgroundPosition = `-${(valeur1 - 1) * 100}px 0`;
+     // le signe - au debut pour décaler l'image vers la gauche et -1 car si on tombe sur 1 : ne pas bouger le background 
+    
+    newDiv2.style.backgroundPosition = `-${(valeur2 - 1) * 100}px 0`; 
+    // exemple si getRandom = 5 : décaler le background image vers la gauche de 400px. Oui j'ai mis des commentaires, désolé
+
+    container.appendChild(newDiv1);
+    container2.appendChild(newDiv2);
 }
 
 
-element.addEventListener("click", () => {
-element.style.backgroundPosition = "-100px 0"; 
-});
+function creationDes(combien, addDe) {
+    const container = document.getElementById("player");
+    const container2 = document.getElementById("dealer");
   
+    container.replaceChildren();
+    container2.replaceChildren();
+  
+    for (let i = 0; i < combien; i++) {
+      addDe();
+    }
+  }
+  
+creationDes(nombreDes,addDe)
+
+
+
 
