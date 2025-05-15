@@ -1,4 +1,7 @@
-window.addEventListener("load", createMultipleDice)
+window.addEventListener("load", function() {
+    const btn = document.getElementById("btn");
+    btn.addEventListener("click", createMultipleDice);
+})
 
 function diceRandom() {
     return Math.round(Math.random() * (6));
@@ -10,7 +13,8 @@ function createDice(id) {
     div.classList.add("dice")
     player.appendChild(div)
     let randomNumber = diceRandom()
-    let position = (randomNumber-1)*100
+    let position = (randomNumber)*100
+    console.log(position)
     div.style.backgroundPosition = "-" + position + "px 0"
 }
 
@@ -20,9 +24,16 @@ function createOpponent() {
     div.setAttribute("id", "dealer")
 }
 
+function reset() {
+    document.getElementById("player").textContent = ""
+    document.getElementById("dealer").textContent = ""
+}
+
 function createMultipleDice() {
-    let numberDices = parseInt(prompt("Combien de dés veux-tu lancer ?"))
-    for (let i=0; i<numberDices; i++) {
+    let input = document.getElementById("numberDices");
+    let count = parseInt(input.value)
+    reset()
+    for (let i=0; i<count; i++) {
         createDice("player")
         createDice("dealer")
     }
