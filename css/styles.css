@@ -29,6 +29,7 @@ html, body {
 
 .dice {
   background-image: url("../images/dice-sprite.png");
+  background-position: 100px;
   width: 100px;
   height: 100px;
   margin: 1em;
