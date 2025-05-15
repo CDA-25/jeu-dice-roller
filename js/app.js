@@ -1,17 +1,17 @@
 window.addEventListener("load", function () {
 
 
-
     function nbrAleatoire(min, max) {
         return Math.round(Math.random() * (max - min + 1) + min);
     }
 
-    function creaDe() {
+
+    function creaDe(joueur) {
         const newDiv = document.createElement("div");
         newDiv.classList.add("dice");
         console.log(newDiv);
-        const player = document.querySelector("#player");
-        player.appendChild(newDiv)
+        const lanceur = document.querySelector(`${joueur}`);
+        lanceur.appendChild(newDiv)
         const tirage = nbrAleatoire(1, 6);
         console.log(tirage);
         const dicePosition = (tirage - 1) * -100;
@@ -24,7 +24,8 @@ window.addEventListener("load", function () {
         let nbrChoisi = parseInt(prompt('Avec combien de dé veux-tu jouer ?'));
         if (!isNaN(nbrChoisi) && nbrChoisi >= 1 && nbrChoisi <= 6) {
             for (let i = 0; i < nbrChoisi; i++) {
-                creaDe()
+                creaDe('#player')
+                creaDe('#dealer')
             }
         } else {
             alert('Vous devez entrer un chiffre entre 1 et 6');
@@ -35,3 +36,7 @@ window.addEventListener("load", function () {
 
     choisirNbr()
 });
+
+const dealer = document.querySelector("#dealer");
+dealer.classList.add("board")
+
