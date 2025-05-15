@@ -34,6 +34,18 @@ html, body {
   margin: 1em;
 }
 
+.diceInput {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
 .diceNumberInput, .diceNumberInputSubmit{
   width: 50px;
 }
+
+#numberDices, #chooseNumberDices {
+  width: 50px;
+}
+
