@@ -32,4 +32,6 @@ html, body {
   width: 100px;
   height: 100px;
   margin: 1em;
+  display: inline-block;
+  background-repeat: no-repeat;
 }
