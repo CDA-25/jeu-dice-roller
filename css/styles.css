@@ -27,9 +27,13 @@ html, body {
   background-color: #e67e22;
 }
 
-.dice {
+.dice, .board {
   background-image: url("../images/dice-sprite.png");
   width: 100px;
   height: 100px;
   margin: 1em;
+}
+
+.diceNumberInput, .diceNumberInputSubmit{
+  width: 50px;
 }
