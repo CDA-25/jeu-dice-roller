@@ -2,6 +2,7 @@ html, body {
   height: 100vh;
   width: 100%;
   background-color: #f39c12;
+  margin: 0;
 }
 
 #app {
@@ -17,6 +18,8 @@ html, body {
   justify-content: center;
   flex: 1;
   background-color: #f39c12;
+  gap: 10px;
+  
 }
 
 #dealer {
@@ -32,4 +35,7 @@ html, body {
   width: 100px;
   height: 100px;
   margin: 1em;
+  background-size: 600px 100px;
+  background-repeat: no-repeat;
+  
 }
