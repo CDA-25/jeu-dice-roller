@@ -54,4 +54,8 @@ creationDes(nombreDes,addDe)
 
 
 
+document.getElementById("btnLancer").addEventListener("click", () => {
+  const nombreDes = validerNombreDes();
+  creationDes(nombreDes, addDe);
+});
 
