@@ -5,23 +5,16 @@ dicesInput.addEventListener("click", function() {
     let nbDices = 0
     nbDices = dicesValue.value
     
-    
-
-    if (gameCount === 0) {
-        startGame(nbDices)   
+    if (gameCount > 0) {
+        document.getElementById("player").textContent = ""
+        document.getElementById("dealer").textContent = ""
     }
-
-    else {
-        document.getElementById("player").innerHTML = ""
-        document.getElementById("dealer").innerHTML = ""
-        startGame(nbDices)
-    }
+    startGame(nbDices)
 })
 
 function randomNumber() {
     return Math.round((Math.random() * 6) +1) * 100
 }
-
 
 function startGame(dices) {
     for (let i = 0; i < dices; i++) {
