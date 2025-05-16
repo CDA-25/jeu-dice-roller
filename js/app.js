@@ -8,30 +8,61 @@ dicesInput.addEventListener("click", function() {
     if (gameCount > 0) {
         document.getElementById("player").textContent = ""
         document.getElementById("dealer").textContent = ""
+        document.querySelector(".result").textContent = ""
     }
     startGame(nbDices)
 })
 
 function randomNumber() {
-    return Math.round((Math.random() * 6) +1) * 100
+    return Math.trunc((Math.random() * 6) + 1)
 }
 
 function startGame(dices) {
+    let playerScore = 0
+    let dealerScore = 0
     for (let i = 0; i < dices; i++) {
+        
+        let playerRollDice = randomNumber()
         let divPlayer = document.getElementById("player")
         const playerDice = document.createElement("div")
         playerDice.className = "dice"
-        playerDice.style.backgroundPositionX = randomNumber() + "px"
+        playerDice.style.backgroundPositionX = "600px" 
+        playerDice.style.backgroundPositionX =- (playerRollDice * 100) + 100 + "px"
         divPlayer.appendChild(playerDice)
+        playerScore += playerRollDice        
 
+        let dealerRollDice = randomNumber()
         let divDealer = document.getElementById("dealer")
         const dealerDice = document.createElement("div")
         dealerDice.className = "board"
-        dealerDice.style.backgroundPositionX = randomNumber() + "px"
+        dealerDice.style.backgroundPositionX = 600 - (dealerRollDice * 100) + 100 + "px"
         divDealer.appendChild(dealerDice)
+        dealerScore += dealerRollDice
+ 
     }
+    
+
+    let divResult = document.querySelector(".result")
+    divResult.classList.remove("hidden")
+    let resultContent = document.createElement("div")
+    resultContent.className = "result"
+    resultContent.textContent = checkWinner(playerScore, dealerScore)
+    divResult.appendChild(resultContent)
     gameCount++
 }
+
+function checkWinner(playerScore, dealerScore) {
+    let score = playerScore + " - " + dealerScore + " : "
+    if (playerScore === dealerScore) {
+        return score + "Draw"
+        }      
+        if (playerScore > dealerScore) {
+            return score + "You win !"
+        } else {
+            return score + "You lose !"
+        }
+}
+      
 
 //Ca manquait de commentaires, alors j'en ai mis un ! :D
 
