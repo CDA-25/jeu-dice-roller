@@ -27,9 +27,51 @@ html, body {
   background-color: #e67e22;
 }
 
-.dice {
+.dice, .board {
   background-image: url("../images/dice-sprite.png");
   width: 100px;
   height: 100px;
   margin: 1em;
 }
+
+.diceInput {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 15rem;
+  margin: 0 auto;
+  background-color: aliceblue;
+  border-radius: 10px;
+  margin-top: 1rem;
+
+}
+
+.diceInput > label {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.diceInput > input {
+  margin: 0.2rem;
+}
+
+.diceNumberInput, .diceNumberInputSubmit{
+  width: 50px;
+}
+
+#numberDices, #chooseNumberDices {
+  width: 150px;
+}
+
+
+.result {
+  margin-top: 0.75rem;
+  font-weight: bold;
+}
+
+.hidden
+{
+    display: none;
+}
+
