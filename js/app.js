@@ -26,8 +26,7 @@ function startGame(dices) {
         let divPlayer = document.getElementById("player")
         const playerDice = document.createElement("div")
         playerDice.className = "dice"
-        playerDice.style.backgroundPositionX = "600px" 
-        playerDice.style.backgroundPositionX =- (playerRollDice * 100) + 100 + "px"
+        playerDice.style.backgroundPositionX = 600 - (playerRollDice * 100) + 100 + "px"
         divPlayer.appendChild(playerDice)
         playerScore += playerRollDice        
 
@@ -38,10 +37,8 @@ function startGame(dices) {
         dealerDice.style.backgroundPositionX = 600 - (dealerRollDice * 100) + 100 + "px"
         divDealer.appendChild(dealerDice)
         dealerScore += dealerRollDice
- 
     }
     
-
     let divResult = document.querySelector(".result")
     divResult.classList.remove("hidden")
     let resultContent = document.createElement("div")
@@ -63,7 +60,6 @@ function checkWinner(playerScore, dealerScore) {
         }
 }
       
-
 //Ca manquait de commentaires, alors j'en ai mis un ! :D
 
 
