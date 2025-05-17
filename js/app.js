@@ -51,13 +51,22 @@ function startGame(dices) {
 function checkWinner(playerScore, dealerScore) {
     let score = playerScore + " - " + dealerScore + " : "
     if (playerScore === dealerScore) {
+        playSound("draw")
         return score + "Draw"
         }      
         if (playerScore > dealerScore) {
+            playSound("win")
             return score + "You win !"
         } else {
+            playSound("lose")
             return score + "You lose !"
         }
+}
+
+function playSound(result) {
+    result = document.getElementById(result)
+    result.currentTime = 0
+    result.play()
 }
       
 //Ca manquait de commentaires, alors j'en ai mis un ! :D
